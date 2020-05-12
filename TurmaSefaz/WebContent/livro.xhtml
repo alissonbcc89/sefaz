@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+				<!-- Criar Livro -->
+		<p:dialog header="Livro" modal="true" visible="true"
+			widgetVar="criarLivro">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Nome: " />
+				<p:inputText value="#{LivroBean.livro.nome}" />
+				<p:outputLabel value="ISBN: " />
+				<p:inputText value="#{LivroBean.livro.isbn}" />
+				<p:outputLabel value="Descricao: " />
+				<p:inputText value="#{LoginBean.livro.descricao}" />
+				<p:outputLabel value="Autor: " />
+				<p:inputText value="#{LoginBean.livro.autor}" />
+				
+				<p:commandButton value="Salvar" update="@form"
+					actionListener="#{LivroBean.criarLivro}" />
+			</p:panelGrid>
+		</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>
